@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twinzlove Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .hero-section {
+      background: url('your-hero-image.jpg') center center/cover no-repeat;
+      height: 60vh;
+      position: relative;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .category-nav .nav-link.active {
+      font-weight: bold;
+      border-bottom: 2px solid black;
+    }
+    .product-card img {
+      height: 250px;
+      object-fit: cover;
+    }
+    .product-card {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    .product-card .btn {
+      background-color: #0aa243;
+      color: white;
+      border: none;
+    }
+    .footer {
+      background-color: #000;
+      color: white;
+      padding: 40px 0 10px;
+    }
+    .footer .bi {
+      margin-right: 10px;
+    }
+    .footer input.form-control {
+      background-color: #333;
+      border: none;
+      font-weight: bold;
+      color: #ddd7d7;
+    }
+    .footer .btn {
+      background-color: #0aa243;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      width: 12vw;
+      height: 6vh;
+    }
+    .footer-bottom {
+      border-top: 1px solid #444;
+      margin-top: 30px;
+      width: 12vw;
+
+      font-size: 18px;
+      background-color: #444;
+      padding-top: 8px;
+      /* padding-left: 6px; */
+      text-align: center;
+      font-weight: bold;
+      height: 6vh;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 fixed-top">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="" class="rounded-circle me-2" alt="Logo" height="100">
+    <div>
+    </div>
+  </a>
+  <form class="d-none d-md-flex mx-auto w-50 position-relative">
+    <input class="form-control ps-5" type="search" placeholder="Search" aria-label="Search">
+    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"></i>
+  </form>
+  <div class="d-flex align-items-center">
+    <div class="me-2"><i class="bi bi-flag-fill text-success"></i> NGN</div>
+    <a href="#" class="me-3 text-decoration-none">Login</a>
+    <a href="#"><i class="bi bi-cart fs-5"></i></a>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm px-3">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    <!-- Left side: Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="twinzloveproducts.jpeg" class="rounded-circle me-2" alt="Logo" height="90">
+      
+    </a>
+
+    <!-- Center: Desktop Search bar -->
+    <form class="d-none d-md-flex mx-auto w-50 position-relative">
+      <input class="form-control ps-5" type="search" placeholder="Search..." aria-label="Search">
+      <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"></i>
+    </form>
+
+    <!-- Right side -->
+    <div class="d-flex align-items-center gap-3">
+
+      <!-- Mobile search icon -->
+      <button class="btn d-md-none p-0" type="button" data-bs-toggle="modal" data-bs-target="#mobileSearchModal">
+        <i class="bi bi-search fs-5 text-dark"></i>
+      </button>
+
+      <!-- Currency -->
+      <span class="d-flex align-items-center"><i class="bi bi-flag-fill text-success me-1"></i> <small>NGN</small></span>
+
+      <!-- Login -->
+      <a href="#" class="text-decoration-none d-none d-sm-block" style="color: #000;">Login</a>
+
+      <!-- Cart -->
+      <a href="#"><i class="bi bi-cart fs-5 text-dark"></i></a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero-section" data-aos="fade-up" style="background-image: url('Screenshot\ 2025-06-14\ 210149.jpg');">
+  <div class="hero-content">
+    <h1 class="fw-bold">Welcome to</h1>
+    <h3 style="font-weight: bold;">Twinzlove_products</h3>
+  </div>
+</section>
+
+<!-- Categories -->
+<div class="container mt-4">
+  <ul class="nav category-nav justify-content-center border-bottom mb-4">
+    <li class="nav-item">
+      <a class="nav-link active" href="#" style="color: #000;">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" style="color: #000;">HAIR OIL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" style="color: #000;">SOAP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" style="color: #000;">More...</a>
+    </li>
+  </ul>
+
+  <!-- Products Section -->
+  <div class="row g-4">
+
+    <!-- Product 1 -->
+    <div class="col-6 col-md-3">
+      <div class="product-card "data-aos="zoom-in" >
+        <img src="ae804ae146786cc778b301876db04eaf67194bb9.jpeg" class="w-100 rounded mb-2" alt="SCRUB">
+        <div>SCRUB (face & body)</div>
+        <div class="fw-bold text-dark">₦3,500</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="col-6 col-md-3">
+      <div class="product-card " data-aos="zoom-in">
+        <img src="f1a01b3e0b4a0a82af492eb0dc0dd4a74124ca53.jpeg" class="w-100 rounded mb-2" alt="Moisturizer">
+        <div>Brightening Body Moisturizer (face & body)</div>
+        <div class="fw-bold text-dark">₦3,500</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="col-6 col-md-3">
+      <div class="product-card  " data-aos="zoom-in">
+        <img src="7029fbb335e6f242bf14558c8d91f9441d2c3e3e.jpeg" class="w-100 rounded mb-2" alt="Vitamin C Serum">
+        <div>VITAMIN C SERUM (face only)</div>
+        <div class="fw-bold text-dark">₦4,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="9e4d39b89f13e6f1635e4297c87145209026c58e.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>Hair Butter</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+
+    <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="50fd7c7316b9f9768c2fe9565ff28cd85895ce41.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>Face/body Scrub</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 6 -->
+
+    <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="cf9331b42e62d4ad2385a9f6fb599409ab3e8c70.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>Pink Lip Balm</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 7 -->
+
+     <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="cadd2064b134b858f1246da33b16646eb6ed1229.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>Face Cream</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 8 -->
+
+     <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="da9858a5e9c9ae2468176ecb1e934c98f66bb41b.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>Night Glowing Cream</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 9 -->
+
+      <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="29491b816edbf6318e0f5a7c7eb2ec48e53641a5.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>Hair Butter</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 10 -->
+
+      <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="5f1e997a8644fa943f20e4484e4fb6a9fbded7b4.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>GOAT MILK BAR SOAP (face&body)</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 11 -->
+
+      <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="019e51738831eaf18f749cdcbf49b28d176d756b.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>TUMERIC BAR SOAP (face&body)</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 12 -->
+
+    
+      <div class="col-6 col-md-3">
+      <div class="product-card text-" data-aos="zoom-in">
+        <img src="87d560fd633a871aeb75fd18d7445f515e71768d.jpeg" class="w-100 rounded mb-2" alt="Hair Butter">
+        <div>NEEM BAR SOAP (face&body)</div>
+        <div class="fw-bold text-dark">₦5,000</div>
+        <button class="btn w-100 mt-2">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer mt-5" data-aos="fade-up">
+  <div class="container">
+    <div class="row text-start">
+      <div class="col-md-6 mb-4">
+        <h6 class="fw-bold">CONTACT US</h6>
+        <p><i class="bi bi-telephone-fill"></i> +2349030774389</p>
+        <p><i class="bi bi-geo-alt-fill"></i> Moniya estate, Ibadan, Oyo, Nigeria</p>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h5 class="fw-bold">SIGN UP FOR DISCOUNTS & UPDATES</h5>
+        <form>
+          <input type="text" class="form-control mb-2" placeholder="Enter your phone number or email address">
+          <button class="btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom text-white mt-3">
+      <small>POWERED BY BUMPA</small>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-btn" target="_blank">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration in ms
+    once: true,     // whether animation should happen only once
+  });
+</script>
+
+<!-- Mobile Search Modal -->
+<div class="modal fade" id="mobileSearchModal" tabindex="-1" aria-labelledby="searchLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-sm-down">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="searchLabel">Search</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="position-relative">
+          <input class="form-control ps-5" type="search" placeholder="Search products..." aria-label="Search">
+          <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"></i>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
