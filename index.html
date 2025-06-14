@@ -91,6 +91,24 @@
       font-weight: bold;
       height: 6vh;
     }
+    .cart-label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+
+.cart-hover:hover .cart-label {
+  opacity: 1;
+  visibility: visible;
+  color: #000;
+  background-color: #fffafa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 5vw;
+  border-radius: 0px 10px 10px 10px ;
+  transform: translateX(0);
+}
+
     .whatsapp-btn {
       position: fixed;
       bottom: 20px;
@@ -118,6 +136,16 @@
       height: 6vh;
     }
     
+.cart-hover:hover .cart-label {
+  opacity: 1;
+  visibility: visible;
+  color: #000;
+  background-color: #fffafa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 12vw;
+  border-radius: 0px 10px 10px 10px ;
+  transform: translateX(0);
+}
     .footer-bottom {
       border-top: 1px solid #444;
       margin-top: 30px;
@@ -184,7 +212,12 @@
       <a href="#" class="text-decoration-none d-none d-sm-block" style="color: #000;">Login</a>
 
       <!-- Cart -->
-      <a href="#"><i class="bi bi-cart fs-5 text-dark"></i></a>
+      <!-- <a href="#"><i class="bi bi-cart fs-5 text-dark"></i></a> -->
+       <a href="#" class="cart-hover text-decoration-none d-flex align-items-center position-relative">
+  <i class="bi bi-cart fs-5 text-dark"></i>
+  <small class="cart-label ms-1">CART</small>
+</a>
+
     </div>
 
   </div>
